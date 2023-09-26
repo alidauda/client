@@ -1,11 +1,10 @@
-import React from 'react'
-import AddBlogs from './addBlogs'
+import AddBlogs from './addBlogs';
 
-export default function addBlogsPage() {
+export default function Page() {
   return (
     <main>
       <h1>Add a exciting Blog</h1>
       <AddBlogs />
     </main>
-  )
+  );
 }

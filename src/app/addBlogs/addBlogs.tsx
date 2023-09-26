@@ -1,6 +1,6 @@
-"use client";
-import axios from "axios";
-import { useState } from "react";
+'use client';
+import axios from 'axios';
+import { useState } from 'react';
 
 export default function AddBlogs() {
   // const [username, setUsername] = useState("");
@@ -8,22 +8,17 @@ export default function AddBlogs() {
   // const [description, setDescription] = useState("");
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
     const blog = {
-      username: "JohnDoe",
-      title: "My Blog Post",
-      description: "This is the content of my blog post.",
+      username: 'JohnDoe',
+      title: 'My Blog Post',
+      description: 'This is the content of my blog post.',
     };
 
     try {
-      const res: any = await fetch("http://localhost:4000/a/addblog", {
-        mode: "no-cors",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username: "JohnDoe" }),
+      const res = await fetch('http://localhost:4000/a/addblog', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(blog),
       });
       if (res.ok) {
         const data = await res.json();
@@ -69,8 +64,6 @@ export default function AddBlogs() {
     //   {/* <label>Blog Image</label> */}
     //   <button type="submit">Add Blog</button>
     // </form>
-    <button onClick={handleSubmit} type="button">
-      Add Blog
-    </button>
+    <button onClick={handleSubmit}>Add Blog</button>
   );
 }
